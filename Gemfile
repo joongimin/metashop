@@ -12,5 +12,7 @@ gem 'unicorn'
 group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
   gem 'byebug'
 end

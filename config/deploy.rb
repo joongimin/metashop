@@ -1,7 +1,6 @@
 set :application, 'metashop-rails'
 set :user, 'ubuntu'
 set :github, 'joongimin/metashop-rails'
-set :git_strategy, CremaGitStrategy
 set :repo_tree, fetch(:application)
 set :repo_subtree, 'core'
 set :repo_url, "git@github.com:#{fetch(:github)}.git"
