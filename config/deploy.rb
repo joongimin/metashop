@@ -19,3 +19,14 @@ end
 after 'deploy:publishing', 'deploy:restart'
 
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
+
+namespace :deploy do
+  namespace :check do
+    desc 'Symlinks the linked_files'
+    before :linked_files, :symlink_templates do
+      on roles(:app) do
+        upload! File.join(File.dirname(__FILE__), "../config/secrets.yml"), "#{shared_path}/config/secrets.yml"
+      end
+    end
+  end
+end
