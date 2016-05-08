@@ -18,6 +18,7 @@ end
 
 after 'deploy:publishing', 'deploy:restart'
 
+set :linked_files, %w{config/secrets.yml}
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
 
 namespace :deploy do
