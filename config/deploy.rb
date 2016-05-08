@@ -1,8 +1,6 @@
 set :application, 'metashop-rails'
 set :user, 'ubuntu'
 set :github, 'joongimin/metashop-rails'
-set :repo_tree, fetch(:application)
-set :repo_subtree, 'core'
 set :repo_url, "git@github.com:#{fetch(:github)}.git"
 set :deploy_to, "/home/#{fetch(:user)}/#{fetch(:application)}"
 set :ssh_options, forward_agent: true
