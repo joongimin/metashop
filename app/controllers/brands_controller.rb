@@ -1,16 +1,15 @@
 class BrandsController < ApplicationController
+  authenticate except: [:show]
+
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
 
-  # GET /brands
   def index
     load_brands
   end
 
-  # GET /brands/1
   def show
   end
 
-  # GET /brands/new
   def new
     @brand = Brand.new
   end

@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  authenticate only: :admin
+
   def index
     @active_main_nav = :home
     load_brands

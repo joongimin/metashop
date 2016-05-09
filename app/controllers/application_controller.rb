@@ -1,4 +1,13 @@
 class ApplicationController < ActionController::Base
+  class << self
+    def authenticate(args)
+      http_basic_authenticate_with(args.merge(
+        name: Rails.application.secrets.username,
+        password: Rails.application.secrets.password,
+      ))
+    end
+  end
+
   protect_from_forgery(with: (Rails.env.test? ? :exception : :null_session))
 
   before_action :load_main_navs

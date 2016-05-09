@@ -1,4 +1,6 @@
 class BrandLinksController < ApplicationController
+  authenticate
+
   before_action :load_brand
 
   def index
