@@ -18,7 +18,7 @@ end
 
 after 'deploy:publishing', 'deploy:restart'
 
-set :linked_files, %w{config/secrets.yml db/production.yml}
+set :linked_files, %w{config/secrets.yml db/production.sqlite3}
 set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
 
 namespace :deploy do
