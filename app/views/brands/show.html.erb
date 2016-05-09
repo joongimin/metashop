@@ -1,0 +1,32 @@
+<div class="page-header">
+  <%= link_to root_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <h1><%= brand.name %></h1>
+</div>
+
+<div class="brand_links">
+  <%= content_tag(
+    :button,
+    'Home',
+    data: {
+      url: brand.device_url(mobile: mobile?)
+    },
+    class: 'brand_link btn btn-default active'
+  ) %>
+  <% brand.brand_links.each do |brand_link| %>
+    <%= content_tag(
+      :button,
+      brand_link.name,
+      data: {
+        url: brand_link.device_url(mobile: mobile?)
+      },
+      class: 'brand_link btn btn-default'
+    ) %>
+  <% end %>
+</div>
+
+<%= content_tag :div, id: 'brand_link_iframe_container', class: ('brand_link_iframe_container--mobile' if mobile?) do %>
+  <%= content_tag :iframe, nil, src: brand.device_url(mobile: mobile?), id: 'brand_link_iframe' %>
+<% end %>

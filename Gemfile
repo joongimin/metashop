@@ -8,11 +8,17 @@ gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'unicorn'
+gem 'bootstrap-generators'
+gem 'browser'
 
 group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
+  gem 'better_errors'
+end
+
+group :development, :test do
   gem 'byebug'
 end

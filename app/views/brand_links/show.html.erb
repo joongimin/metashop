@@ -1,0 +1,23 @@
+<div class="page-header">
+  <%= link_to brand_links_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_brand_link_path(@brand_link), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show brand_link</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Brand:</dt>
+  <dd><%= @brand_link.brand %></dd>
+
+  <dt>Name:</dt>
+  <dd><%= @brand_link.name %></dd>
+
+  <dt>Url:</dt>
+  <dd><%= @brand_link.url %></dd>
+
+</dl>

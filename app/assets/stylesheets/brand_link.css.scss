@@ -1,0 +1,22 @@
+@import "bootstrap-variables.scss";
+
+#brand_link_iframe_container {
+  display: block;
+  position: relative;
+  border: 1px solid grey;
+  margin-top: 15px;
+}
+
+#brand_link_iframe {
+  width: 100%;
+  border: 0;
+  height: 20000px;
+}
+
+@media (max-width: $screen-xs-max) {
+  #brand_link_iframe_container {
+    margin-left: -15px;
+    margin-right: -15px;
+    border: 0;
+  }
+}

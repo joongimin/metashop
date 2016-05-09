@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to new_brand_brand_link_path(brand_id: brand.id), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Link
+  <% end %>
+  <h1>Links in <%= brand.name %></h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, brand_links) do |brand_link| %>
+        <td><%= brand_link.name %></td>
+        <td><%= link_to 'Edit', edit_brand_brand_link_path(brand, brand_link) %></td>
+        <td><%= link_to 'Destroy', [brand, brand_link], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

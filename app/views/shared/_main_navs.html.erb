@@ -1,0 +1,9 @@
+<div id="navbar" class="collapse navbar-collapse">
+  <ul class="nav navbar-nav">
+    <% main_navs.each do |k, v| %>
+      <%= content_tag :li, class: ('active' if k == active_main_nav) do %>
+        <%= link_to v[:title], v[:path] %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
