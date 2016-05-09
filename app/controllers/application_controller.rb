@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   class << self
-    def authenticate(args)
+    def authenticate(args={})
       http_basic_authenticate_with(args.merge(
         name: Rails.application.secrets.username,
         password: Rails.application.secrets.password,
